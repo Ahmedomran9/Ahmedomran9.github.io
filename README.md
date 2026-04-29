@@ -3,335 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>سياسات وأحكام المندوب</title>
+  <title>اللوائح الخاصة بالمناديب</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
     body {
       font-family: "Cairo", sans-serif;
       margin: 0;
-      background: #f5f6fa;
-      color: #333;
-      line-height: 1.8;
+      background: #f0f2f5;
+      color: #1a1a1a;
+      line-height: 1.6;
     }
 
-    /* 🖥️ منع عرض المحتوى على الكمبيوتر */
-    @media (min-width: 768px) {
-      .container {
-        display: none !important;
-      }
-      .desktop-warning {
+    /* --- حماية وحجب أجهزة الكمبيوتر --- */
+    @media (min-width: 769px) {
+      .container { display: none !important; }
+      .no-desktop {
         display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #fff;
+        text-align: center;
       }
     }
 
-    /* رسالة التنبيه لمستخدمي الكمبيوتر */
-    .desktop-warning {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
-    }
+    .no-desktop { display: none; padding: 30px; }
 
-    .desktop-warning img {
-      max-width: 150px;
-      margin-bottom: 20px;
-    }
-
+    /* --- تنسيق الموبايل --- */
     .container {
       max-width: 100%;
-      margin: auto;
-      padding: 16px;
+      margin: 0 auto;
+      padding: 12px;
     }
 
-    /* باقي التنسيقات الخاصة بك مع تحسينها للموبايل */
-    h1 {
+    header {
       text-align: center;
-      color: #ff6b00;
-      font-size: 22px;
-      margin-bottom: 10px;
+      padding: 20px 0;
+      background: #2c3e50;
+      border-radius: 0 0 25px 25px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      font-size: 18px;
-      margin-top: 15px;
-      border-right: 4px solid #ff6b00;
-      padding-right: 10px;
+    header h1 {
+      color: #fff;
+      font-size: 20px;
+      margin: 10px 0 0;
     }
 
     .card {
       background: #fff;
-      padding: 14px;
-      margin: 10px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 15px;
+      border-right: 5px solid #bdc3c7;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    .warning { border-right: 5px solid #f39c12; }
-    .danger { border-right: 5px solid #e74c3c; }
-    .success { border-right: 5px solid #2ecc71; }
-
-    ul { padding-right: 18px; margin: 0; }
-    li { margin-bottom: 6px; font-size: 14px; }
-
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      padding-bottom: 20px;
-      color: #777;
-      font-size: 12px;
-    }
-
-    .highlight { color: #ff6b00; font-weight: bold; }
-
-  </style>
-</head>
-
-<body>
-
-<div class="desktop-warning">
-  <div style="font-size: 50px;">📱</div>
-  <h2 style="border: none;">عذراً، هذه الصفحة متاحة فقط عبر تطبيق "مندوب"</h2>
-  <p>يرجى فتح الرابط من خلال الهاتف المحمول لتتمكن من قراءة اللوائح.</p>
-</div>
-
-<div class="container">
-  <h1>🚚 اللوائح الخاصة بالمناديب</h1>
-
-  <div class="card">
-    <p>
-      مرحبًا بك في فريق <span class="highlight">مندوب</span> 👋<br>
-      لضمان أفضل خدمة وتنظيم العمل، يرجى الالتزام بالسياسات التالية.
-    </p>
-  </div>
-
-  <div class="card success">
-    <h2>✅ القواعد الأساسية</h2>
-    <ul>
-      <li>الالتزام بالمواعيد</li>
-      <li>احترام العملاء</li>
-      <li>الحفاظ على سلامة الطلبات</li>
-      <li>عدم تحصيل مبالغ إضافية</li>
-    </ul>
-  </div>
-
-  <div class="card danger">
-    <h2>⛔ مخالفات جسيمة</h2>
-    <ul>
-      <li>سلوك غير لائق مع العميل</li>
-      <li>التلاعب في أسعار التوصيل</li>
-      <li>عدم تسليم الطلب بعد استلامه</li>
-    </ul>
-    <p class="highlight">💰 الخصم يصل لـ 300 جنيه أو الإيقاف</p>
-  </div>
-
-  <div class="card danger">
-    <h2>🚫 التلاعب في الطلبات</h2>
-    <ul>
-      <li>تعطيل أو تجاهل الطلب بعد القبول</li>
-    </ul>
-    <p>⚠️ الحد الأقصى للتجاهل: <span class="highlight">5 مرات فقط</span></p>
-    <p style="color: red; font-weight: bold;">بعد ذلك يتم الإيقاف المباشر.</p>
-  </div>
-
-  <div class="card">
-    <h2>💰 نظام الخصومات والتقييم</h2>
-    <p>الالتزام + السرعة = أرباح أعلى وفرص تمييز في نظام مندوب 🏆</p>
-  </div>
-
-  <footer>
-    © 2026 مندوب - جميع الحقوق محفوظة
-  </footer>
-</div>
-
-<script>
-  // منع عرض الصفحة إذا كان المستخدم يستخدم متصفح كمبيوتر عن طريق الـ User Agent
-  function checkDevice() {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile && window.innerWidth > 768) {
-        // يمكننا ترك الـ CSS يتعامل مع الإخفاء، أو إعادة توجيهه لموقعك
-        // window.location.href = "https://ahmedomran9.github.io"; 
-    }
-  }
-  window.onload = checkDevice;
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>سياسات وأحكام المندوب</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Cairo", sans-serif;
-      margin: 0;
-      background: #f5f6fa;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    /* 🖥️ منع عرض المحتوى على الكمبيوتر */
-    @media (min-width: 768px) {
-      .container {
-        display: none !important;
-      }
-      .desktop-warning {
-        display: flex !important;
-      }
-    }
-
-    /* رسالة التنبيه لمستخدمي الكمبيوتر */
-    .desktop-warning {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
-    }
-
-    .desktop-warning img {
-      max-width: 150px;
-      margin-bottom: 20px;
-    }
-
-    .container {
-      max-width: 100%;
-      margin: auto;
-      padding: 16px;
-    }
-
-    /* باقي التنسيقات الخاصة بك مع تحسينها للموبايل */
-    h1 {
-      text-align: center;
-      color: #ff6b00;
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+    /* ألوان الحالة */
+    .success { border-right-color: #27ae60; }
+    .warning { border-right-color: #f39c12; }
+    .danger { border-right-color: #e74c3c; }
 
     h2 {
-      font-size: 18px;
-      margin-top: 15px;
-      border-right: 4px solid #ff6b00;
-      padding-right: 10px;
+      font-size: 17px;
+      margin: 0 0 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .card {
-      background: #fff;
-      padding: 14px;
-      margin: 10px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    ul { padding-right: 20px; margin: 0; }
+    li { margin-bottom: 5px; font-size: 14px; }
+
+    .price-tag {
+      display: inline-block;
+      background: #fdf2f2;
+      color: #e74c3c;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 13px;
+      margin-top: 8px;
     }
-
-    .warning { border-right: 5px solid #f39c12; }
-    .danger { border-right: 5px solid #e74c3c; }
-    .success { border-right: 5px solid #2ecc71; }
-
-    ul { padding-right: 18px; margin: 0; }
-    li { margin-bottom: 6px; font-size: 14px; }
 
     footer {
       text-align: center;
-      margin-top: 30px;
-      padding-bottom: 20px;
-      color: #777;
+      padding: 20px;
       font-size: 12px;
+      color: #7f8c8d;
     }
 
-    .highlight { color: #ff6b00; font-weight: bold; }
-
+    .highlight { color: #e67e22; font-weight: bold; }
   </style>
 </head>
-
 <body>
 
-<div class="desktop-warning">
-  <div style="font-size: 50px;">📱</div>
-  <h2 style="border: none;">عذراً، هذه الصفحة متاحة فقط عبر تطبيق "مندوب"</h2>
-  <p>يرجى فتح الرابط من خلال الهاتف المحمول لتتمكن من قراءة اللوائح.</p>
-</div>
-
-<div class="container">
-  <h1>🚚 اللوائح الخاصة بالمناديب</h1>
-
-  <div class="card">
-    <p>
-      مرحبًا بك في فريق <span class="highlight">مندوب</span> 👋<br>
-      لضمان أفضل خدمة وتنظيم العمل، يرجى الالتزام بالسياسات التالية.
-    </p>
+  <div class="no-desktop">
+    <div style="font-size: 60px;">🚫</div>
+    <h2>هذه الصفحة مخصصة للهواتف فقط</h2>
+    <p>يرجى فتح الرابط من داخل تطبيق "مندوب" للمتابعة.</p>
   </div>
 
-  <div class="card success">
-    <h2>✅ القواعد الأساسية</h2>
-    <ul>
-      <li>الالتزام بالمواعيد</li>
-      <li>احترام العملاء</li>
-      <li>الحفاظ على سلامة الطلبات</li>
-      <li>عدم تحصيل مبالغ إضافية</li>
-    </ul>
+  <div class="container">
+    <header>
+      <div style="font-size: 40px;">📜</div>
+      <h1>اللوائح الخاصة بالمناديب</h1>
+    </header>
+
+    <div class="card" style="border-right: none; text-align: center;">
+      <p>مرحباً بك في فريق <span class="highlight">مندوب</span> 👋<br> لضمان جودة العمل، يرجى قراءة اللوائح التالية بعناية.</p>
+    </div>
+
+    <div class="card success">
+      <h2>✅ القواعد الذهبية</h2>
+      <ul>
+        <li>الالتزام التام بمواعيد التسليم.</li>
+        <li>حسن المظهر والتعامل مع العملاء.</li>
+        <li>الحفاظ على سلامة الطلب (الأمانة).</li>
+      </ul>
+    </div>
+
+    <div class="card warning">
+      <h2>⚠️ مخالفات متوسطة</h2>
+      <ul>
+        <li>التأخر غير المبرر عن العميل.</li>
+        <li>عدم الرد على اتصالات الدعم الفني.</li>
+      </ul>
+      <span class="price-tag">خصم: 50 - 150 جنيه</span>
+    </div>
+
+    <div class="card danger">
+      <h2>⛔ مخالفات جسيمة</h2>
+      <ul>
+        <li>سوء التعامل مع العملاء أو المتاجر.</li>
+        <li>التلاعب في مبالغ التوصيل المقررة.</li>
+      </ul>
+      <span class="price-tag">خصم: حتى 300 جنيه</span>
+    </div>
+
+    <div class="card danger">
+      <h2>🚫 الإيقاف النهائي</h2>
+      <ul>
+        <li>تكرار تجاهل الطلبات (أكثر من 5 مرات).</li>
+        <li>القيام بعمليات تلاعب أو سرقة.</li>
+        <li>الاتفاق مع العملاء خارج نظام "مندوب".</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>⭐ نصيحة للنجاح</h2>
+      <p style="font-size: 14px;">التقييم العالي يعني أولوية في استلام الطلبات وزيادة في الدخل اليومي. التزم تربح أكثر 💰</p>
+    </div>
+
+    <footer>
+      © 2026 نظام مندوب - جميع الحقوق محفوظة
+    </footer>
   </div>
 
-  <div class="card danger">
-    <h2>⛔ مخالفات جسيمة</h2>
-    <ul>
-      <li>سلوك غير لائق مع العميل</li>
-      <li>التلاعب في أسعار التوصيل</li>
-      <li>عدم تسليم الطلب بعد استلامه</li>
-    </ul>
-    <p class="highlight">💰 الخصم يصل لـ 300 جنيه أو الإيقاف</p>
-  </div>
-
-  <div class="card danger">
-    <h2>🚫 التلاعب في الطلبات</h2>
-    <ul>
-      <li>تعطيل أو تجاهل الطلب بعد القبول</li>
-    </ul>
-    <p>⚠️ الحد الأقصى للتجاهل: <span class="highlight">5 مرات فقط</span></p>
-    <p style="color: red; font-weight: bold;">بعد ذلك يتم الإيقاف المباشر.</p>
-  </div>
-
-  <div class="card">
-    <h2>💰 نظام الخصومات والتقييم</h2>
-    <p>الالتزام + السرعة = أرباح أعلى وفرص تمييز في نظام مندوب 🏆</p>
-  </div>
-
-  <footer>
-    © 2026 مندوب - جميع الحقوق محفوظة
-  </footer>
-</div>
-
-<script>
-  // منع عرض الصفحة إذا كان المستخدم يستخدم متصفح كمبيوتر عن طريق الـ User Agent
-  function checkDevice() {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile && window.innerWidth > 768) {
-        // يمكننا ترك الـ CSS يتعامل مع الإخفاء، أو إعادة توجيهه لموقعك
-        // window.location.href = "https://ahmedomran9.github.io"; 
-    }
-  }
-  window.onload = checkDevice;
-</script>
-
+  <script>
+    // منع السحب للأسفل لتحديث الصفحة في بعض المتصفحات (Pull-to-refresh)
+    document.body.style.overscrollBehavior = 'contain';
+  </script>
 </body>
 </html>
